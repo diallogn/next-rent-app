@@ -5,8 +5,10 @@ import NavBar from './components/navbar/navbar';
 import ClientOnly from './components/clientOnly';
 import Modal from './components/modals/modal';
 import RegisterModal from './components/modals/RegisterModal';
-import ToasterProvider from './providers/ToasterProvider';
+import RentModal from './components/modals/RentModal';
 import LoginModal from './components/modals/LoginModal';
+
+import ToasterProvider from './providers/ToasterProvider';
 import getCurrentUser from './actions/getCurrentUser';
 
 export const metadata = {
@@ -29,11 +31,12 @@ export default async function RootLayout({
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider />
+          <RentModal />
           <RegisterModal />
           <LoginModal />
           <NavBar currentUser={currentUser} />
         </ClientOnly>
-        {children}
+        <div className="pb-20 pt-28">{children}</div>
       </body>
     </html>
   );

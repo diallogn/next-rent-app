@@ -55,7 +55,7 @@ const Modal: React.FC<ModalProps> = ({
   }, [disabled, onSubmit]);
 
   const handleSecondaryAction = useCallback(() => {
-    if (disabled || secondaryAction) {
+    if (disabled || !secondaryAction) {
       return;
     }
 
@@ -89,8 +89,8 @@ const Modal: React.FC<ModalProps> = ({
               {/** BODY */}
               <div className="relative p-4 flex-auto">{body}</div>
               {/** FOOTER */}
-              <div className="flex flex-col grap-2 p-4">
-                <div className="flex flex-row items-center grap-4 w-full">
+              <div className="flex flex-col gap-2 p-4">
+                <div className="flex flex-row items-center gap-4 w-full">
                   {secondaryAction && secondaryActionLabel && (
                     <Button
                       outline
