@@ -7,7 +7,7 @@ import Button from './button';
 interface EmptyStateProps {
   title?: string;
   subtitle?: string;
-  showReset: boolean;
+  showReset?: boolean;
 }
 
 const EmptyState: React.FC<EmptyStateProps> = ({
